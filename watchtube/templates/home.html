@@ -1,0 +1,22 @@
+{% extends 'base-layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="columns is-multiline">
+            {% for video in videos %}
+        <div class="column is-4">
+                <div id="video-wrapper">
+                    <video id="video" width="320" height="240"
+                           data-play="hover" muted="muted">
+                        <source src="{{ video.video.url }}"
+                                type="video/mp4">
+                        Your browser does not
+                        support the video tag.x
+                    </video>
+                </div>
+        </div>
+            {% endfor %}
+    </div>
+
+{% endblock %}
+
